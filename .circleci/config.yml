@@ -5,8 +5,8 @@ orbs:
   # or the latest version 1.x.x using "@1" syntax
   cypress: cypress-io/cypress@3.1.2
   newman: postman/newman@1.0.0
-    jobs:
-    newman-collection-run:
+jobs:
+  newman-collection-run:
     executor: newman/postman-newman-docker
     steps:
     -checkout
