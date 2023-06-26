@@ -13,4 +13,7 @@ jobs:
         background: true
       - newman/newman-run:
       collection: ./todoCollection.json
-workflows: null
+workflows: 
+  build:
+    jobs: 
+      - newman-collection-run
