@@ -1,24 +1,16 @@
-# to use orbs, must use version >= 2.1
-version: 2.1
+version: '2.1'
 orbs:
-  # import Cypress orb by specifying an exact version x.y.z
-  # or the latest version 1.x.x using "@1" syntax
-  cypress: cypress-io/cypress@3.1.2
   newman: postman/newman@1.0.0
 jobs:
   newman-collection-run:
     executor: newman/postman-newman-docker
     steps:
-    -checkout
-    -run: npm install
-    -run: 
-      name: Start TodoMVC server
-      command: npm start
-      background: true
-    -newman/newman-run:
+      - checkout
+      - run: npm install
+      - run: 
+        name: Start TodoMVC server
+        command: npm start
+        background: true
+      - newman/newman-run:
       collection: ./todoCollection.json
-      # "cypress" is the name of the imported orb
-      # "run" is the name of the job defined in Cypress orb
-      # - cypress/run:
-      #     start: npm start
-      #     store_artifacts: true
+workflows: null
