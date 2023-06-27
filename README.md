@@ -1,4 +1,4 @@
-# testing-app-example
+# WIP- API testing using Cypress and Postman with CircleCI
 
 > A TodoMVC app with simple REST backend
 
