@@ -1,11 +1,11 @@
 /// <reference types="cypress" />
-import TodoPage from '../support/pageObjects/todoPage'
+import TodoPage from '../support/pageObjects/TodoPage'
 
-const todoPage = new TodoPage()
 before(() => {
   cy.request('POST', '/reset', { todos: [] })
 })
 it('adds and removes todos', () => {
+  const todoPage = new TodoPage()
   cy.visit('/')
   todoPage.addTodo('finish homework')
   todoPage.addTodo('feed Sparky')
